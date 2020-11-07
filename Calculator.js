@@ -10,7 +10,7 @@ class Calculator {
 
   clear () {
     this.currentOperand = ''
-    this.previousOperand = ''
+    this.previousOperand = '' //Empties the form input
     this.operation = undefined
   }
 
@@ -121,31 +121,31 @@ const currentOperandTextElement = document.querySelector('[data-current-operand]
 
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
 
-numberButtons.forEach(button => {
+numberButtons.forEach(button => {                                                           // handles the activity for each button on the calculator, utilizing inheritance  
   button.addEventListener('click', () => {
     calculator.appendNumber(button.innerText)
     calculator.updateDisplay()
   })
 })
 
-operationButtons.forEach(button => {
+operationButtons.forEach(button => {                                                         // handles the activity for each button on the calculator, utilizing inheritance
   button.addEventListener('click', () => {
     calculator.chooseOperation(button.innerText)
     calculator.updateDisplay()
   })
 })
 
-equalButton.addEventListener('click', button => {
-  calculator.updateDisplay()
+equalButton.addEventListener('click', button => {                                             // handles the activity for each button on the calculator, utilizing inheritance
+  calculator.updateDisplay() 
   calculator.compute()
 })
 
-allClearButton.addEventListener('click', button => {
+allClearButton.addEventListener('click', button => {                                         // handles the activity for each button on the calculator, utilizing inheritance
   calculator.clear()
   calculator.updateDisplay()
 })
 
-deleteButton.addEventListener('click', button => {
+deleteButton.addEventListener('click', button => {                                           // handles the activity for each button on the calculator, utilizing inheritance
   calculator.delete()
   calculator.updateDisplay()
 })
